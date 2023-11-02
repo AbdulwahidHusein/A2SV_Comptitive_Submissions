@@ -9,7 +9,6 @@ def less_or_equals(nums, k):
         print(target)
     else:
         
-        
         print(target + 1)
 
 n, k = map(int, input().split())
