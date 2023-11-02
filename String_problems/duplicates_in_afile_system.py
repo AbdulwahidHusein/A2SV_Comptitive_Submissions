@@ -1,6 +1,7 @@
 class Solution:
     def findDuplicate(self, paths: List[str]) -> List[List[str]]:
         m = defaultdict(list)
+        
         for p in paths:
             path = p.split()
             directoryPath, rest = path[0], path[1:]
