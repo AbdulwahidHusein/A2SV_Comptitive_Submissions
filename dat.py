@@ -1,33 +1,46 @@
-def minmax(costs, fruits):
-    costs.sort()
-    frts = {}
-    mincost = 0
-    max_cost = 0
-    
-    for fruit in fruits:
-        try:
-            frts[fruit] += 1
-        except:
-            frts[fruit] = 1
-    sfrts = dict(sorted(frts.items(), key=lambda x: x[1], reverse=True))
-    i = 0
-    j = len(costs)-1
-    for fr in sfrts:
-        mincost += costs[i]*sfrts[fr]
-        max_cost += costs[j]*sfrts[fr]
-        i += 1
-        j -=1
-    print(str(mincost)+ ' '+str(max_cost))
-    
-a, b = map(int, input().split())
-fruits = []
-costs = [int(i) for i in input().split()]
-for _ in range(b):
-    fruits.append(input().strip())
-minmax(costs, fruits)
+# Python3 program to print 
+# primes smaller than n using
+# Sieve of Sundaram.
 
-        
-    
-    
-    
-    
+# Prints all prime numbers smaller
+def SieveOfSundaram(n):
+	
+	# In general Sieve of Sundaram, 
+	# produces primes smaller
+	# than (2*x + 2) for a number 
+	# given number x. Since we want
+	# primes smaller than n, we 
+	# reduce n to half
+	nNew = int((n - 1) / 2);
+
+	# This array is used to separate 
+	# numbers of the form i+j+2ij
+	# from others where 1 <= i <= j
+	# Initialize all elements as not marked
+	marked = [0] * (nNew + 1);
+
+	# Main logic of Sundaram. Mark all 
+	# numbers of the form i + j + 2ij 
+	# as true where 1 <= i <= j
+	for i in range(1, nNew + 1):
+		j = i;
+		while((i + j + 2 * i * j) <= nNew):
+			marked[i + j + 2 * i * j] = 1;
+			j += 1;
+
+	# Since 2 is a prime number
+	if (n > 2):
+		print(2, end = " ")
+
+	# Print other primes. Remaining 
+	# primes are of the form 2*i + 1 
+	# such that marked[i] is false.
+	for i in range(1, nNew + 1):
+		if (marked[i] == 0):
+			print((2 * i + 1), end = " ")
+
+# Driver Code
+n = 20
+SieveOfSundaram(n)
+
+# This code is contributed by mits
