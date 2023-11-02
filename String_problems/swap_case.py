@@ -5,6 +5,8 @@ def swap_case(s):
         return w.upper()
         
         
+        
+        
     swapped = ''
     for letter in s:
         if letter.isalpha():
