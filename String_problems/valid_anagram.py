@@ -4,6 +4,5 @@ class Solution(object):
             return False
         for idx in set(s):
             if s.count(idx) != t.count(idx):
-                
                 return False
         return True
