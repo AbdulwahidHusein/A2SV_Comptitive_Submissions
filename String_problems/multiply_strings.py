@@ -4,6 +4,7 @@ class Solution:
         carry2 = 1
         mul = 0
         for i in num1[::-1]:
+            
             carry2 = 1
             for j in num2[::-1]:
                 mul += int(i)*carry1*int(j)*carry2
