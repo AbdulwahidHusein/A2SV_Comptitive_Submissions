@@ -14,7 +14,6 @@ def countSwaps(a):
     print("Last Element: "+str(a[-1]))
 
 
-
 if __name__ == '__main__':
     n = int(input().strip())
     a = list(map(int, input().rstrip().split()))
