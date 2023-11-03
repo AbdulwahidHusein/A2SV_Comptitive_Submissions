@@ -8,5 +8,4 @@ class Solution:
                     arr[i] = arr[j]
                     arr[j] = temp
         s = " ".join([str(m) for m in arr])
-        return s
-    
+        return 
