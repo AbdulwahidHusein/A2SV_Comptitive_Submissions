@@ -12,8 +12,6 @@ def countSwaps(a):
     print("Array is sorted in "+str(swaps)+" swaps.")
     print("First Element: "+str(a[0]))
     print("Last Element: "+str(a[-1]))
-    
-    
 
 if __name__ == '__main__':
     n = int(input().strip())
