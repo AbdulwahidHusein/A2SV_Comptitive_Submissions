@@ -9,3 +9,4 @@ class Solution:
                     arr[j] = temp
         s = " ".join([str(m) for m in arr])
         return s
+    

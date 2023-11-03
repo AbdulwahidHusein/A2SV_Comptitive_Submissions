@@ -7,4 +7,3 @@ class Solution:
                 if val in replacements:
                     nums[idx] = replacements[val]
             return nums
-    
