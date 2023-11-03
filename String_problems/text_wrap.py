@@ -9,7 +9,6 @@ def wrap(string, max_width):
         end += max_width
     if start < len(string):
         s += string[start:]
-        
     return s
     
 if __name__ == '__main__':
