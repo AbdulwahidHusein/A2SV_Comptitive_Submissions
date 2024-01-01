@@ -6,6 +6,6 @@ class Solution:
         ans = 0
         j = 0
         for i in range(n):
-            ans = max(ans, processorTime[i] + max(tasks[j: j+4]))
+            ans = max(ans, processorTime[i] + max(tasks[j], tasks[j+1], tasks[j+2], tasks[j+3]))
             j += 4
         return ans
