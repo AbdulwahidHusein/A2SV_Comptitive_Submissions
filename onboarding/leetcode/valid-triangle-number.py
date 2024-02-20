@@ -1,14 +1,15 @@
 class Solution:
     def triangleNumber(self, nums: List[int]) -> int:
-        n = len(nums)
-        if n < 3:
-            return 0
-        nums.sort()
+        nums.sort()#lets brute force
+        n=len(nums)
         ans = 0
-        for i in range(2, n):
-            for j in range(i):
-                nedded = nums[i] - nums[j] + 1
-                idx = bisect.bisect_left(nums, nedded)
-                if idx < j:
-                    ans += j - idx
-        return ans
+        for k in range(2,n):
+            i=0
+            j=k-1
+            while i<j:
+                if nums[i]+nums[j]>nums[k]:
+                    ans+=(j-i)
+                    j-=1
+                else:
+                    i+=1
+        return ans 
