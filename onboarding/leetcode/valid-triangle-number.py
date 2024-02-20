@@ -3,13 +3,13 @@ class Solution:
         nums.sort()#lets brute force
         n=len(nums)
         ans = 0
-        for k in range(2,n):
-            i=0
-            j=k-1
-            while i<j:
-                if nums[i]+nums[j]>nums[k]:
-                    ans+=(j-i)
-                    j-=1
+        for i in range(2,n):
+            left=0
+            right=i-1
+            while left<right:
+                if nums[left]+nums[right]>nums[i]:
+                    ans+=(right-left)
+                    right-=1
                 else:
-                    i+=1
+                    left+=1
         return ans 
