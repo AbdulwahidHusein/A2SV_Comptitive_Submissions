@@ -9,7 +9,6 @@ class TimeMap:
     def get(self, key: str, timestamp: int) -> str:
         candidates = self.store[key]
         n = len(candidates)
-        lidx = bisect_left(candidates, timestamp, key = lambda x: x[0])
         ridx = bisect_right(candidates, timestamp, key = lambda x: x[0])
         if ridx == 0:
             return ""
